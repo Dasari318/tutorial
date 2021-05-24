@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Bundle-Category: Test Project
+Bundle-Description: Core bundle for Test Project
+Bundle-ManifestVersion: 2
+Bundle-Name: Test Project - Core
+Bundle-SymbolicName: test.core
+Bundle-Version: 0.0.1.SNAPSHOT
+Export-Package: com.mindtree.test.core.filters;version="1.0";uses:="ja
+ vax.servlet",com.mindtree.test.core.listeners;version="1.0";uses:="or
+ g.osgi.service.event",com.mindtree.test.core.models;version="1.0";use
+ s:="javax.annotation,org.apache.sling.api,org.apache.sling.api.resour
+ ce,org.apache.sling.models.annotations,org.apache.sling.models.annota
+ tions.injectorspecific",com.mindtree.test.core.schedulers;version="1.
+ 0",com.mindtree.test.core.servlets;version="1.0";uses:="javax.servlet
+ ,org.apache.sling.api,org.apache.sling.api.servlets"
+Import-Package: javax.annotation;version="0.0.0",com.day.cq.wcm.api;ve
+ rsion="[1.27,2)",com.mindtree.test.core.filters;version="[1.0,2)",com
+ .mindtree.test.core.listeners;version="[1.0,2)",com.mindtree.test.cor
+ e.schedulers;version="[1.0,2)",com.mindtree.test.core.servlets;versio
+ n="[1.0,2)",javax.inject;version="[1.0,2)",javax.servlet;version="[3.
+ 1,4)",org.apache.sling.api;version="[2.3,3)",org.apache.sling.api.req
+ uest;version="[2.4,3)",org.apache.sling.api.resource;version="[2.11,3
+ )",org.apache.sling.api.servlets;version="[2.2,3)",org.apache.sling.c
+ ommons.osgi;version="[2.4,3)",org.apache.sling.models.annotations;ver
+ sion="[1.5,2)",org.apache.sling.models.annotations.injectorspecific;v
+ ersion="[1.1,2)",org.apache.sling.settings;version="[1.3,2)",org.osgi
+ .service.event;version="[1.3,2)",org.slf4j;version="[1.7,2)"
+Private-Package: com.mindtree.test.core.component
+Provide-Capability: osgi.service;objectClass:List<String>="com.mindtre
+ e.test.core.component.OrcharConfig";uses:="com.mindtree.test.core.com
+ ponent",osgi.service;objectClass:List<String>="java.lang.Runnable",os
+ gi.service;objectClass:List<String>="javax.servlet.Filter";uses:="jav
+ ax.servlet",osgi.service;objectClass:List<String>="javax.servlet.Serv
+ let";uses:="javax.servlet",osgi.service;objectClass:List<String>="org
+ .osgi.service.event.EventHandler";uses:="org.osgi.service.event"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.mindtree.test.core.component.OrchardCo
+ nfigImpl.xml,OSGI-INF/com.mindtree.test.core.filters.LoggingFilter.xm
+ l,OSGI-INF/com.mindtree.test.core.listeners.SimpleResourceListener.xm
+ l,OSGI-INF/com.mindtree.test.core.schedulers.SimpleScheduledTask.xml,
+ OSGI-INF/com.mindtree.test.core.servlets.SimpleServlet.xml
+Sling-Model-Classes: com.mindtree.test.core.models.AuthorBooksImpl,com
+ .mindtree.test.core.models.AuthorImpl,com.mindtree.test.core.models.H
+ elloWorldModel
+
